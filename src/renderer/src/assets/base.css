@@ -63,3 +63,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background-soft);
+  border: none;
+  outline: none;
+  padding: 10px;
+}

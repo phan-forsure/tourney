@@ -6,15 +6,16 @@ import icon from '../../resources/icon.png?asset'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1200,
+    height: 800,
     show: false,
     autoHideMenuBar: true,
+    frame: false,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   })
 
   mainWindow.on('ready-to-show', () => {
@@ -50,7 +51,7 @@ app.whenReady().then(() => {
   })
 
   // // IPC test
-  // ipcMain.on('ping', () => console.log('pong'))
+  // // ipcMain.on('ping', () => console.log('pong')) //
 
   createWindow()
 

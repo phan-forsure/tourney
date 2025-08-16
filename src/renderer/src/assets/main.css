@@ -1,12 +1,7 @@
 @import './base.css';
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-image: url('./wavy-lines.svg');
-  background-size: cover;
+  /* overflow: hidden; */
   user-select: none;
 }
 
@@ -30,142 +25,98 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+}
+
+.ai-screen {
+  display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(39, 39, 39);
+  color: var(--color-text);
 }
 
 .logo {
-  margin-bottom: 20px;
-  -webkit-user-drag: none;
-  height: 128px;
-  width: 128px;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 1.2em #6988e6aa);
-}
-
-.creator {
-  font-size: 14px;
-  line-height: 16px;
-  color: var(--ev-c-text-2);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 28px;
-  color: var(--ev-c-text-1);
-  font-weight: 700;
-  line-height: 32px;
-  text-align: center;
-  margin: 0 10px;
-  padding: 16px 0;
-}
-
-.tip {
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--ev-c-text-2);
-  font-weight: 600;
-}
-
-.react {
-  background: -webkit-linear-gradient(315deg, #087ea4 55%, #7c93ee);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-.ts {
-  background: -webkit-linear-gradient(315deg, #3178c6 45%, #f0dc4e);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-.actions {
+  font-weight: bold;
+  color: var(--color-text);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   display: flex;
-  padding-top: 32px;
-  margin: -6px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  flex-grow: 1;
+  align-content: center;
+  justify-content: center;
 }
 
-.action {
-  flex-shrink: 0;
-  padding: 6px;
+.logo .symbol {
+  font-size: 15em;
 }
 
-.action a {
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid transparent;
+.logo-text {
+  font-size: 2em;
+  margin-left: 0.5em;
+  width: 100%;
   text-align: center;
-  font-weight: 600;
-  white-space: nowrap;
-  border-radius: 20px;
-  padding: 0 20px;
-  line-height: 38px;
-  font-size: 14px;
-  border-color: var(--ev-button-alt-border);
-  color: var(--ev-button-alt-text);
-  background-color: var(--ev-button-alt-bg);
 }
 
-.action a:hover {
-  border-color: var(--ev-button-alt-hover-border);
-  color: var(--ev-button-alt-hover-text);
-  background-color: var(--ev-button-alt-hover-bg);
-}
-
-.versions {
-  position: absolute;
-  bottom: 30px;
-  margin: 0 auto;
-  padding: 15px 0;
-  font-family: 'Menlo', 'Lucida Console', monospace;
-  display: inline-flex;
+.ai-screen .screen-input input {
+  padding: 1.5em;
+  font-size: 1.5em;
+  width: 100%;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ai-screen .screen-input {
+  transition: all 0.2s;
+  display: flex;
   align-items: center;
-  border-radius: 22px;
-  background-color: #202127;
-  backdrop-filter: blur(24px);
+  width: 40%;
+  padding: 1em;
+  margin-bottom: 3em;
+  border-radius: 4em;
+  background: var(--color-background-soft);
 }
 
-.versions li {
-  display: block;
-  float: left;
-  border-right: 1px solid var(--ev-c-gray-1);
-  padding: 0 20px;
-  font-size: 14px;
-  line-height: 14px;
-  opacity: 0.8;
-  &:last-child {
-    border: none;
-  }
+.ai-screen .screen-input:has(input:focus, .question-arrow:active) {
+  width: 65%;
 }
 
-@media (max-width: 720px) {
-  .text {
-    font-size: 20px;
-  }
+.ai-screen .screen-input .question-arrow {
+  padding: 1em;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  margin-right: 1.5em;
 }
 
-@media (max-width: 620px) {
-  .versions {
-    display: none;
-  }
+.top-bar {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  padding: 0.5em;
+  background-color: var(--color-background-mute);
+  color: white;
 }
 
-@media (max-width: 350px) {
-  .tip,
-  .actions {
-    display: none;
-  }
+.top-bar button {
+  margin-left: 0.75em;
+  color: white;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  opacity: 0.75;
+  background-color: var(--color-background-mute);
+  border-radius: 50%;
+}
+
+.top-bar button:hover {
+  opacity: 1;
+  background-color: var(--color-background-soft);
 }

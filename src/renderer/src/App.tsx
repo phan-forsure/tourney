@@ -1,5 +1,13 @@
+import AiScreen from './components/AiScreen'
+import TopBar from './components/TopBar'
+
 function App(): React.JSX.Element {
-  return <></>
+  return (
+    <>
+      <TopBar />
+      <AiScreen></AiScreen>
+    </>
+  )
 }
 
 export default App
