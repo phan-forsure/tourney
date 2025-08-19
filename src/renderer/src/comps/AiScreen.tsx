@@ -1,5 +1,7 @@
 import { ArrowUp } from 'lucide-react'
 import { useEffect, useRef } from 'react'
+// import { DataTable } from './DataTable'
+// import { columns } from './Columns'
 
 export default function AiScreen(): React.JSX.Element {
   const questionArrowRef = useRef<HTMLDivElement>(null)
@@ -8,7 +10,9 @@ export default function AiScreen(): React.JSX.Element {
   useEffect(() => {
     questionArrowRef.current?.addEventListener('click', () => {
       // console.log(inputRef?.current?.value)
-      inputRef.current!.value = ''
+      if (inputRef.current!.value != '') {
+        inputRef.current!.value = ''
+      }
     })
   }, [])
 
@@ -27,6 +31,10 @@ export default function AiScreen(): React.JSX.Element {
           <ArrowUp strokeWidth={2.6} />
         </div>
       </div>
+      {/* <DataTable
+        columns={columns}
+        data={[{ id: 1, amount: 100, status: 'pending', email: 'm@example.com' }]}
+      /> */}
     </div>
   )
 }

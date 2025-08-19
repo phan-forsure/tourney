@@ -1,7 +1,7 @@
 @import './base.css';
 
 body {
-  /* overflow: hidden; */
+  overflow: hidden;
   user-select: none;
 }
 
@@ -28,6 +28,11 @@ code {
   flex-wrap: wrap;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
 }
 
 .ai-screen {
@@ -37,7 +42,7 @@ code {
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: rgb(39, 39, 39);
+  background-color: var(--color-background-soft);
   color: var(--color-text);
 }
 
@@ -54,6 +59,7 @@ code {
 
 .logo .symbol {
   font-size: 15em;
+  color: rgb(97, 246, 117);
 }
 
 .logo-text {
@@ -76,10 +82,10 @@ code {
   display: flex;
   align-items: center;
   width: 40%;
-  padding: 1em;
-  margin-bottom: 3em;
+  padding: 0.5em;
+  margin-bottom: 6em;
   border-radius: 4em;
-  background: var(--color-background-soft);
+  background: var(--color-background-mute);
 }
 
 .ai-screen .screen-input:has(input:focus, .question-arrow:active) {
@@ -97,11 +103,12 @@ code {
 
 .top-bar {
   display: flex;
+  flex-shrink: 0;
   width: 100%;
   justify-content: end;
   align-items: center;
   padding: 0.5em;
-  background-color: var(--color-background-mute);
+  background-color: rgb(39, 39, 39);
   color: white;
 }
 
@@ -112,11 +119,16 @@ code {
   outline: none;
   transition: all 0.2s;
   opacity: 0.75;
-  background-color: var(--color-background-mute);
+  background-color: var(--color-background-soft);
   border-radius: 50%;
 }
 
 .top-bar button:hover {
   opacity: 1;
   background-color: var(--color-background-soft);
+}
+
+.sidebar {
+  background-color: var(--color-background-soft);
+  color: var(--color-text);
 }

@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 :root {
   --ev-c-white: #ffffff;
   --ev-c-white-soft: #f8f8f8;
@@ -68,7 +70,6 @@ input {
   font-family: inherit;
   font-size: 1rem;
   color: var(--color-text);
-  background-color: var(--color-background-soft);
   border: none;
   outline: none;
   padding: 10px;

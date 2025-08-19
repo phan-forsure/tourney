@@ -1,11 +1,15 @@
-import AiScreen from './components/AiScreen'
-import TopBar from './components/TopBar'
+import AiScreen from './comps/AiScreen'
+import Sidebar from './comps/Sidebar'
+import TopBar from './comps/TopBar'
 
 function App(): React.JSX.Element {
   return (
     <>
       <TopBar />
-      <AiScreen></AiScreen>
+      <div className="content flex h-[95%]">
+        <Sidebar />
+        <AiScreen />
+      </div>
     </>
   )
 }
