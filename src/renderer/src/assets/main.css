@@ -3,6 +3,7 @@
 body {
   overflow: hidden;
   user-select: none;
+  background-color: var(--color-background-soft);
 }
 
 code {
@@ -41,7 +42,7 @@ code {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
+  flex: 1;
   background-color: var(--color-background-soft);
   color: var(--color-text);
 }
@@ -92,6 +93,10 @@ code {
   width: 65%;
 }
 
+.side-open + .ai-screen {
+  display: none;
+}
+
 .ai-screen .screen-input .question-arrow {
   padding: 1em;
   border-radius: 50%;
@@ -110,6 +115,7 @@ code {
   padding: 0.5em;
   background-color: rgb(39, 39, 39);
   color: white;
+  -webkit-app-region: drag;
 }
 
 .top-bar button {
@@ -121,6 +127,7 @@ code {
   opacity: 0.75;
   background-color: var(--color-background-soft);
   border-radius: 50%;
+  -webkit-app-region: no-drag;
 }
 
 .top-bar button:hover {
@@ -129,6 +136,10 @@ code {
 }
 
 .sidebar {
-  background-color: var(--color-background-soft);
+  background-color: #1f1f1f;
   color: var(--color-text);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
