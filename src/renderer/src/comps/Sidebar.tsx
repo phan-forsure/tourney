@@ -1,4 +1,4 @@
-import { MoonIcon, SidebarIcon } from 'lucide-react'
+import { SidebarIcon } from 'lucide-react'
 import { useState } from 'react'
 import Dashboard from './Dashboard'
 
@@ -16,12 +16,9 @@ export default function Sidebar(): React.JSX.Element {
           <Dashboard />
         </div>
       )}
-      <div className={`h-full w-20 ${sidebar ? 'border-l-1' : 'border-l-0'} border-[#333333]`}>
+      <div className={`h-full w-20 ${sidebar ? 'border-l-1' : 'border-l-0'} border-[#3a3a3a12]`}>
         <div className={sidebarIconStyle} onClick={() => setSidebar((sidebar) => !sidebar)}>
           <SidebarIcon size={30} />
-        </div>
-        <div className={sidebarIconStyle}>
-          <MoonIcon size={30} />
         </div>
       </div>
     </div>

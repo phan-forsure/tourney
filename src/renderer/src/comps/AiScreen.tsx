@@ -62,8 +62,8 @@ export default function AiScreen(): React.JSX.Element {
       {!isChatStarted ? (
         <div className="flex-1 flex flex-col items-center justify-center">
           <div className="logo mb-4">
-            <div className="symbol">+</div>
-            <div className="logo-text">Let&apos;s become healthier together</div>
+            <div className="symbol text-green-600">+</div>
+            <div className="logo-text text-green-700">Let&apos;s become healthier together</div>
           </div>
         </div>
       ) : (
@@ -75,7 +75,9 @@ export default function AiScreen(): React.JSX.Element {
             >
               <div
                 className={`max-w-[70%] rounded-lg px-4 py-2 ${
-                  message.role === 'user' ? 'bg-green-300 text-black' : 'bg-gray-200 text-black'
+                  message.role === 'user'
+                    ? 'bg-green-500 text-white'
+                    : 'bg-green-100 text-green-900'
                 }`}
               >
                 {message.content}
@@ -84,16 +86,22 @@ export default function AiScreen(): React.JSX.Element {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-gray-200 text-black rounded-lg px-4 py-2">Typing...</div>
+              <div className="bg-green-50 text-green-800 rounded-lg px-4 py-2">Typing...</div>
             </div>
           )}
         </div>
       )}
 
       {/* Input Area */}
-      <div className="screen-input p-4!">
-        <input type="text" ref={inputRef} placeholder="Ask me anything..." disabled={isLoading} />
-        <div className="question-arrow flex" ref={questionArrowRef}>
+      <div className="screen-input p-4! bg-green-50 border border-green-100">
+        <input
+          type="text"
+          ref={inputRef}
+          placeholder="Ask me anything..."
+          disabled={isLoading}
+          className="bg-transparent text-green-900 placeholder-green-900/50"
+        />
+        <div className="question-arrow flex text-green-600" ref={questionArrowRef}>
           {isChatStarted && (
             <X
               className="mr-2! transition-all opacity-70 hover:opacity-100"
