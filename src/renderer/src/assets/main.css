@@ -39,71 +39,38 @@ code {
 .ai-screen {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
   flex: 1;
   background-color: var(--color-background-soft);
   color: var(--color-text);
-}
-
-.logo {
-  font-weight: bold;
-  color: var(--color-text);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  align-content: center;
-  justify-content: center;
-}
-
-.logo .symbol {
-  font-size: 15em;
-  color: rgb(97, 246, 117);
-}
-
-.logo-text {
-  font-size: 2em;
-  margin-left: 0.5em;
-  width: 100%;
-  text-align: center;
-}
-
-.ai-screen .screen-input input {
-  padding: 1.5em;
-  font-size: 1.5em;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 1rem;
 }
 
 .ai-screen .screen-input {
-  transition: all 0.2s;
+  margin-top: auto;
   display: flex;
   align-items: center;
-  width: 40%;
-  padding: 0.5em;
-  margin-bottom: 6em;
-  border-radius: 4em;
-  background: var(--color-background-mute);
+  background-color: var(--color-background-mute);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-.ai-screen .screen-input:has(input:focus, .question-arrow:active) {
-  width: 65%;
+.ai-screen .screen-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  padding: 0.5rem;
+}
+
+.ai-screen .screen-input .question-arrow {
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 .side-open + .ai-screen {
   display: none;
-}
-
-.ai-screen .screen-input .question-arrow {
-  padding: 1em;
-  border-radius: 50%;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  margin-right: 1.5em;
 }
 
 .top-bar {
@@ -138,6 +105,26 @@ code {
 .sidebar {
   background-color: #1f1f1f;
   color: var(--color-text);
+}
+
+.logo {
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.logo .symbol {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.logo .logo-text {
+  font-size: 1.5rem;
+}
+
+.logo:hover {
+  opacity: 1;
 }
 
 ::-webkit-scrollbar {

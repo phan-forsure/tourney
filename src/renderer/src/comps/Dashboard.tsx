@@ -113,7 +113,7 @@ function MedicationCalendar(): React.JSX.Element {
   ]
 
   return (
-    <Card className=" mb-12!">
+    <Card className="mb-12! p-20 border-0! bg-neutral-800">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
@@ -124,20 +124,30 @@ function MedicationCalendar(): React.JSX.Element {
             <CardDescription>Hover over dates to see scheduled medications</CardDescription>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={() => navigateMonth('prev')}>
-              <ChevronLeft className="h-4 w-4" />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => navigateMonth('prev')}
+              className="cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4 cursor-pointer" />
             </Button>
-            <span className="font-medium min-w-[120px] text-center">
+            <span className="font-medium min-w-[120px] text-lg! text-center">
               {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
             </span>
-            <Button variant="outline" size="sm" onClick={() => navigateMonth('next')}>
-              <ChevronRight className="h-4 w-4" />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => navigateMonth('next')}
+              className="cursor-pointer"
+            >
+              <ChevronRight className="h-4 w-4 cursor-pointer" />
             </Button>
           </div>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-7 gap-1 mb-4">
+        <div className="grid grid-cols-7 gap-2 mb-4">
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
             <div key={day} className="p-2 text-center text-sm font-medium text-muted-foreground">
               {day}
@@ -159,10 +169,8 @@ function MedicationCalendar(): React.JSX.Element {
             return (
               <div
                 key={day}
-                className={`p-2 h-12 border rounded-md cursor-pointer transition-colors relative ${
-                  hasMedications
-                    ? 'bg-primary/10 border-primary/30 hover:bg-primary/20'
-                    : 'hover:bg-muted'
+                className={`p-2 h-24 bg-[var(--color-background-soft)] rounded-md cursor-pointer transition-colors relative ${
+                  hasMedications ? 'bg-neutral-800/10' : 'hover:bg-[var(--color-background-muted)]'
                 }`}
                 onMouseEnter={() => setHoveredDate(dateKey)}
                 onMouseLeave={() => setHoveredDate(null)}
@@ -180,18 +188,18 @@ function MedicationCalendar(): React.JSX.Element {
 
         {/* Medication tooltip */}
         {hoveredDate && medicationData[hoveredDate] && (
-          <div className="mt-4 p-3 bg-card border rounded-lg shadow-sm">
-            <h4 className="font-medium mb-2 flex items-center gap-2">
+          <div className="mt-12! p-8 bg-[var(--color-background-soft)] rounded-lg shadow-sm">
+            <h2 className="font-bold! mb-2 flex items-center gap-2">
               <Clock className="h-4 w-4" />
               Medications for {hoveredDate}
-            </h4>
+            </h2>
             <div className="space-y-2">
               {medicationData[hoveredDate].map((med, index) => (
                 <div key={index} className="flex justify-between items-center text-sm">
-                  <span className="font-medium">{med.name}</span>
+                  <span className="text-xl">{med.name}</span>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <span>{med.time}</span>
-                    <Badge variant="secondary" className="text-xs">
+                    <span className="text-lg">{med.time}</span>
+                    <Badge variant="secondary" className="text-lg">
                       {med.dosage}
                     </Badge>
                   </div>
@@ -222,7 +230,7 @@ function TestResultsTable(): React.JSX.Element {
   }
 
   return (
-    <Card className=" mb-12!">
+    <Card className="mb-12! p-20 border-0! bg-neutral-800">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <TestTube className="h-5 w-5 text-primary" />
@@ -231,7 +239,7 @@ function TestResultsTable(): React.JSX.Element {
         <CardDescription>Track your medical tests and results</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto text-lg!">
           <table className="w-full">
             <thead>
               <tr className="border-b">
@@ -245,7 +253,10 @@ function TestResultsTable(): React.JSX.Element {
             </thead>
             <tbody>
               {testResults.map((test) => (
-                <tr key={test.id} className="border-b hover:bg-muted/50">
+                <tr
+                  key={test.id}
+                  className="border-b hover:bg-[var(--color-background-soft)] transition-all"
+                >
                   <td className="p-3 font-medium">{test.testName}</td>
                   <td className="p-3 text-muted-foreground">{test.date}</td>
                   <td className="p-3 font-mono">{test.result}</td>
@@ -254,7 +265,7 @@ function TestResultsTable(): React.JSX.Element {
                       {test.status}
                     </Badge>
                   </td>
-                  <td className="p-3 text-sm text-muted-foreground">{test.referenceRange}</td>
+                  <td className="p-3 text-muted-foreground">{test.referenceRange}</td>
                   <td className="p-3 text-muted-foreground">{test.doctor}</td>
                 </tr>
               ))}
@@ -268,7 +279,7 @@ function TestResultsTable(): React.JSX.Element {
 
 export default function HealthDashboard(): React.JSX.Element {
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-background p-6 text-2xl">
       <div className="max-w-7xl mx-auto space-y-6">
         <div className="text-center mb-8!">
           <h1 className="text-3xl font-bold text-foreground mb-2">Health Dashboard</h1>
