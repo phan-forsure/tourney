@@ -14,7 +14,7 @@ if (process.contextIsolated) {
     contextBridge.exposeInMainWorld('ipcRenderer', {
       send: (channel: string, ...args: unknown[]) => ipcRenderer.send(channel, ...args),
       on: (channel: string, listener: (...args: unknown[]) => void) =>
-        ipcRenderer.on(channel, (event, ...args) => listener(...args)),
+        ipcRenderer.on(channel, (_event, ...args) => listener(...args)),
       removeAllListeners: (channel: string) => ipcRenderer.removeAllListeners(channel),
     })
   } catch (error) {

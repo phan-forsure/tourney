@@ -113,35 +113,37 @@ function MedicationCalendar(): React.JSX.Element {
   ]
 
   return (
-    <Card className="mb-12! p-20 border-0! bg-neutral-800">
+    <Card className="mt-12! mb-12 p-20 border border-green-100 bg-white shadow-sm">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-primary" />
+            <CardTitle className="flex items-center gap-2 text-green-700">
+              <Calendar className="h-5 w-5 text-green-600" />
               Medication Calendar
             </CardTitle>
-            <CardDescription>Hover over dates to see scheduled medications</CardDescription>
+            <CardDescription className="text-green-600">
+              Hover over dates to see scheduled medications
+            </CardDescription>
           </div>
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="sm"
               onClick={() => navigateMonth('prev')}
-              className="cursor-pointer"
+              className="cursor-pointer border-green-100 text-green-700 hover:bg-green-50"
             >
-              <ChevronLeft className="h-4 w-4 cursor-pointer" />
+              <ChevronLeft className="h-4 w-4" />
             </Button>
-            <span className="font-medium min-w-[120px] text-lg! text-center">
+            <span className="font-medium min-w-[120px] text-lg text-center text-green-700">
               {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
             </span>
             <Button
               variant="outline"
               size="sm"
               onClick={() => navigateMonth('next')}
-              className="cursor-pointer"
+              className="cursor-pointer border-green-100 text-green-700 hover:bg-green-50"
             >
-              <ChevronRight className="h-4 w-4 cursor-pointer" />
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -149,7 +151,7 @@ function MedicationCalendar(): React.JSX.Element {
       <CardContent>
         <div className="grid grid-cols-7 gap-2 mb-4">
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-            <div key={day} className="p-2 text-center text-sm font-medium text-muted-foreground">
+            <div key={day} className="p-2 text-center text-sm font-medium text-green-600">
               {day}
             </div>
           ))}
@@ -169,16 +171,16 @@ function MedicationCalendar(): React.JSX.Element {
             return (
               <div
                 key={day}
-                className={`p-2 h-24 bg-[var(--color-background-soft)] rounded-md cursor-pointer transition-colors relative ${
-                  hasMedications ? 'bg-neutral-800/10' : 'hover:bg-[var(--color-background-muted)]'
+                className={`p-2 h-24 rounded-md cursor-pointer transition-colors relative ${
+                  hasMedications ? 'bg-green-50' : 'hover:bg-green-50/50'
                 }`}
                 onMouseEnter={() => setHoveredDate(dateKey)}
                 onMouseLeave={() => setHoveredDate(null)}
               >
-                <span className="text-sm">{day}</span>
+                <span className="text-sm text-green-700">{day}</span>
                 {hasMedications && (
                   <div className="absolute bottom-1 right-1">
-                    <Pill className="h-3 w-3 text-primary" />
+                    <Pill className="h-3 w-3 text-green-600" />
                   </div>
                 )}
               </div>
@@ -188,18 +190,18 @@ function MedicationCalendar(): React.JSX.Element {
 
         {/* Medication tooltip */}
         {hoveredDate && medicationData[hoveredDate] && (
-          <div className="mt-12! p-8 bg-[var(--color-background-soft)] rounded-lg shadow-sm">
-            <h2 className="font-bold! mb-2 flex items-center gap-2">
+          <div className="mt-12 p-8 bg-green-50 rounded-lg shadow-sm">
+            <h2 className="font-bold mb-2 flex items-center gap-2 text-green-700">
               <Clock className="h-4 w-4" />
               Medications for {hoveredDate}
             </h2>
             <div className="space-y-2">
               {medicationData[hoveredDate].map((med, index) => (
                 <div key={index} className="flex justify-between items-center text-sm">
-                  <span className="text-xl">{med.name}</span>
-                  <div className="flex items-center gap-2 text-muted-foreground">
+                  <span className="text-xl text-green-700">{med.name}</span>
+                  <div className="flex items-center gap-2 text-green-600">
                     <span className="text-lg">{med.time}</span>
-                    <Badge variant="secondary" className="text-lg">
+                    <Badge variant="secondary" className="text-lg bg-green-100 text-green-700">
                       {med.dosage}
                     </Badge>
                   </div>
@@ -220,53 +222,55 @@ function TestResultsTable(): React.JSX.Element {
         return 'bg-green-100 text-green-800 border-green-200'
       case 'elevated':
       case 'prediabetic':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200'
+        return 'bg-yellow-50 text-yellow-700 border-yellow-200'
       case 'high':
       case 'abnormal':
-        return 'bg-red-100 text-red-800 border-red-200'
+        return 'bg-red-50 text-red-700 border-red-200'
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200'
+        return 'bg-gray-50 text-gray-700 border-gray-200'
     }
   }
 
   return (
-    <Card className="mb-12! p-20 border-0! bg-neutral-800">
+    <Card className="mb-12 p-20 border border-green-100 bg-white shadow-sm">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <TestTube className="h-5 w-5 text-primary" />
+        <CardTitle className="flex items-center gap-2 text-green-700">
+          <TestTube className="h-5 w-5 text-green-600" />
           Test Results & Appointments
         </CardTitle>
-        <CardDescription>Track your medical tests and results</CardDescription>
+        <CardDescription className="text-green-600">
+          Track your medical tests and results
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="overflow-x-auto text-lg!">
+        <div className="overflow-x-auto text-lg">
           <table className="w-full">
             <thead>
-              <tr className="border-b">
-                <th className="text-left p-3 font-medium">Test Name</th>
-                <th className="text-left p-3 font-medium">Date</th>
-                <th className="text-left p-3 font-medium">Result</th>
-                <th className="text-left p-3 font-medium">Status</th>
-                <th className="text-left p-3 font-medium">Reference Range</th>
-                <th className="text-left p-3 font-medium">Doctor</th>
+              <tr className="border-b border-green-100">
+                <th className="text-left p-3 font-medium text-green-700">Test Name</th>
+                <th className="text-left p-3 font-medium text-green-700">Date</th>
+                <th className="text-left p-3 font-medium text-green-700">Result</th>
+                <th className="text-left p-3 font-medium text-green-700">Status</th>
+                <th className="text-left p-3 font-medium text-green-700">Reference Range</th>
+                <th className="text-left p-3 font-medium text-green-700">Doctor</th>
               </tr>
             </thead>
             <tbody>
               {testResults.map((test) => (
                 <tr
                   key={test.id}
-                  className="border-b hover:bg-[var(--color-background-soft)] transition-all"
+                  className="border-b border-green-50 hover:bg-green-50/50 transition-all"
                 >
-                  <td className="p-3 font-medium">{test.testName}</td>
-                  <td className="p-3 text-muted-foreground">{test.date}</td>
-                  <td className="p-3 font-mono">{test.result}</td>
+                  <td className="p-3 font-medium text-green-700">{test.testName}</td>
+                  <td className="p-3 text-green-600">{test.date}</td>
+                  <td className="p-3 font-mono text-green-700">{test.result}</td>
                   <td className="p-3">
                     <Badge variant="outline" className={getStatusColor(test.status)}>
                       {test.status}
                     </Badge>
                   </td>
-                  <td className="p-3 text-muted-foreground">{test.referenceRange}</td>
-                  <td className="p-3 text-muted-foreground">{test.doctor}</td>
+                  <td className="p-3 text-green-600">{test.referenceRange}</td>
+                  <td className="p-3 text-green-600">{test.doctor}</td>
                 </tr>
               ))}
             </tbody>
@@ -279,13 +283,11 @@ function TestResultsTable(): React.JSX.Element {
 
 export default function HealthDashboard(): React.JSX.Element {
   return (
-    <div className="min-h-screen bg-background p-6 text-2xl">
+    <div className="min-h-screen bg-white p-6 text-2xl">
       <div className="max-w-7xl mx-auto space-y-6">
-        <div className="text-center mb-8!">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Health Dashboard</h1>
-          <p className="text-muted-foreground">
-            Monitor your medications and track your health progress
-          </p>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-green-700 mb-2">Health Dashboard</h1>
+          <p className="text-green-600">Monitor your medications and track your health progress</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-1">
