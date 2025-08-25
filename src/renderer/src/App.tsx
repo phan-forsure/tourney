@@ -1,4 +1,4 @@
-import AiScreen from './comps/AiScreen'
+import AiScreen from './comps/MainPage'
 import Sidebar from './comps/Sidebar'
 import TopBar from './comps/TopBar'
 

@@ -36,9 +36,8 @@ code {
   flex-grow: 1;
 }
 
-.ai-screen {
+.main-screen {
   display: flex;
-  flex-direction: column;
   height: 100%;
   flex: 1;
   background-color: var(--ev-c-white);
@@ -46,31 +45,7 @@ code {
   padding: 1rem;
 }
 
-.ai-screen .screen-input {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  background-color: var(--ev-c-white-soft);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #e0f2e9;
-}
-
-.ai-screen .screen-input input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--color-text);
-  padding: 0.5rem;
-}
-
-.ai-screen .screen-input .question-arrow {
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.side-open + .ai-screen {
+.side-open + .main-screen {
   display: none;
 }
 
@@ -108,28 +83,6 @@ code {
   background-color: #ffffff;
   border-right: 1px solid #e8f5e9;
   color: #2e7d32;
-}
-
-.logo {
-  text-align: center;
-  opacity: 0.9;
-  transition: opacity 0.3s;
-}
-
-.logo .symbol {
-  color: #2e7d32;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.logo .logo-text {
-  color: #1b5e20;
-  font-size: 1.5rem;
-}
-
-.logo:hover {
-  opacity: 1;
 }
 
 ::-webkit-scrollbar {

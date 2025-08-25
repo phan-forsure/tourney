@@ -8,6 +8,7 @@
   --ev-c-black: #ffffff;
   --ev-c-black-soft: #f8fff7;
   --ev-c-black-mute: #e8f5e9;
+  --ev-c-black-dark: #c2f3c6;
 
   --ev-c-gray-1: #90a4ae;
   --ev-c-gray-2: #b0bec5;
@@ -29,6 +30,7 @@
   --color-background: var(--ev-c-black);
   --color-background-soft: var(--ev-c-black-soft);
   --color-background-mute: var(--ev-c-black-mute);
+  --color-background-dark: var(--ev-c-black-dark);
 
   --color-text: var(--ev-c-text-1);
 }
