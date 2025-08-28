@@ -10,7 +10,7 @@ export default function MainPage(): React.JSX.Element {
   const [activeContent, setActiveContent] = useState<'none' | 'cancer' | 'diet'>('none')
 
   return (
-    <div className="main-screen overflow-y-scroll min-2xl:mx-60! min-2xl:justify-center flex h-full flex-wrap">
+    <div className="main-screen overflow-y-scroll min-2xl:mx-60! justify-center flex h-full flex-wrap">
       <div
         className={`cancer-detection ${componentClass} ${activeContent === 'cancer' ? 'bg-green-100 !opacity-100' : ''}`}
         onClick={() => setActiveContent((current) => (current === 'cancer' ? 'none' : 'cancer'))}
