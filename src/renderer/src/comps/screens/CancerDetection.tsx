@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useState } from 'react'
 import { AlertCircle, CheckCircle2, Stethoscope, Calendar, ChevronRight } from 'lucide-react'
 import { Input } from '@renderer/components/ui/input'
