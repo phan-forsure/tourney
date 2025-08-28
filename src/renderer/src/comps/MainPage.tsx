@@ -18,8 +18,8 @@ export default function MainPage(): React.JSX.Element {
         }`}
         onClick={() => setActiveContent((current) => (current === 'cancer' ? 'none' : 'cancer'))}
       >
-        <Activity size={40} />
-        <span>Cancer Detection</span>
+        <Activity size={40} color="#7bc1b7" />
+        <span className="text-[#07572e]">Cancer Detection</span>
       </div>
       <div
         className={`diet ${componentClass} ${
@@ -27,8 +27,8 @@ export default function MainPage(): React.JSX.Element {
         }`}
         onClick={() => setActiveContent((current) => (current === 'diet' ? 'none' : 'diet'))}
       >
-        <Salad size={40} />
-        <span>Diet Plan</span>
+        <Salad size={40} color="#7bc1b7" />
+        <span className="text-[#07572e]">Diet Plan</span>
       </div>
       {activeContent !== 'none' ? (
         <div className="w-full m-4! p-6 bg-white rounded-xl shadow-sm flex justify-center">
