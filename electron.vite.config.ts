@@ -1,3 +1,4 @@
+// @ts-expect-error - no types for this plugin yet
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
