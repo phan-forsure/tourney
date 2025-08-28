@@ -182,7 +182,7 @@ export default function HealthDashboard(): React.JSX.Element {
   return (
     <div className="min-h-screen bg-white p-6 text-2xl">
       <div className="max-w-7xl mx-auto space-y-6">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8!">
           <h1 className="text-3xl font-bold text-green-700 mb-2">Health Dashboard</h1>
           <p className="text-green-600">Monitor your medications and track your health progress</p>
         </div>
