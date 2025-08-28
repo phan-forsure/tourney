@@ -8,7 +8,8 @@ import {
 } from '@renderer/components/ui/card'
 import { Badge } from '@renderer/components/ui/badge'
 import { Button } from '@renderer/components/ui/button'
-import { Calendar, Clock, Pill, TestTube, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Calendar, Clock, Pill, ChevronLeft, ChevronRight } from 'lucide-react'
+import TestResultsTable from './DataTable'
 
 // Sample medication data
 const medicationData = {
@@ -28,44 +29,6 @@ const medicationData = {
 }
 
 // Sample test results data
-const testResults = [
-  {
-    id: 1,
-    testName: 'Blood Glucose',
-    date: '2025-01-10',
-    result: '95 mg/dL',
-    status: 'Normal',
-    referenceRange: '70-100 mg/dL',
-    doctor: 'Dr. Smith',
-  },
-  {
-    id: 2,
-    testName: 'Blood Pressure',
-    date: '2025-01-08',
-    result: '128/82 mmHg',
-    status: 'Elevated',
-    referenceRange: '<120/80 mmHg',
-    doctor: 'Dr. Johnson',
-  },
-  {
-    id: 3,
-    testName: 'Cholesterol Total',
-    date: '2025-01-05',
-    result: '185 mg/dL',
-    status: 'Normal',
-    referenceRange: '<200 mg/dL',
-    doctor: 'Dr. Smith',
-  },
-  {
-    id: 4,
-    testName: 'HbA1c',
-    date: '2025-01-03',
-    result: '6.2%',
-    status: 'Prediabetic',
-    referenceRange: '<5.7%',
-    doctor: 'Dr. Smith',
-  },
-]
 
 function MedicationCalendar(): React.JSX.Element {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 0, 15)) // January 15, 2025
@@ -113,7 +76,11 @@ function MedicationCalendar(): React.JSX.Element {
   ]
 
   return (
+<<<<<<< HEAD
     <Card className="mt-12! mb-12 p-20 border border-green-100 bg-white shadow-sm">
+=======
+    <Card className="mb-12 p-20 border border-green-100 bg-white shadow-sm">
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
@@ -215,6 +182,7 @@ function MedicationCalendar(): React.JSX.Element {
   )
 }
 
+<<<<<<< HEAD
 function TestResultsTable(): React.JSX.Element {
   const getStatusColor = (status: string): string => {
     switch (status.toLowerCase()) {
@@ -281,11 +249,17 @@ function TestResultsTable(): React.JSX.Element {
   )
 }
 
+=======
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
 export default function HealthDashboard(): React.JSX.Element {
   return (
     <div className="min-h-screen bg-white p-6 text-2xl">
       <div className="max-w-7xl mx-auto space-y-6">
+<<<<<<< HEAD
         <div className="text-center mb-8">
+=======
+        <div className="text-center mb-8!">
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
           <h1 className="text-3xl font-bold text-green-700 mb-2">Health Dashboard</h1>
           <p className="text-green-600">Monitor your medications and track your health progress</p>
         </div>

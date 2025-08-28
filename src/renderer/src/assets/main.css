@@ -3,7 +3,7 @@
 body {
   overflow: hidden;
   user-select: none;
-  background-color: var(--color-background-soft);
+  background-color: var(--ev-c-white);
 }
 
 code {
@@ -30,15 +30,15 @@ code {
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  background-color: var(--ev-c-white);
 }
 
 .content {
   flex-grow: 1;
 }
 
-.ai-screen {
+.main-screen {
   display: flex;
-  flex-direction: column;
   height: 100%;
   flex: 1;
   background-color: var(--ev-c-white);
@@ -46,6 +46,7 @@ code {
   padding: 1rem;
 }
 
+<<<<<<< HEAD
 .ai-screen .screen-input {
   margin-top: auto;
   display: flex;
@@ -71,6 +72,9 @@ code {
 }
 
 .side-open + .ai-screen {
+=======
+.side-open + .main-screen {
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
   display: none;
 }
 
@@ -78,7 +82,6 @@ code {
   display: flex;
   flex-shrink: 0;
   width: 100%;
-  justify-content: end;
   align-items: center;
   padding: 0.5em;
   background-color: #f8fff7;
@@ -108,6 +111,7 @@ code {
   background-color: #ffffff;
   border-right: 1px solid #e8f5e9;
   color: #2e7d32;
+<<<<<<< HEAD
 }
 
 .logo {
@@ -130,6 +134,8 @@ code {
 
 .logo:hover {
   opacity: 1;
+=======
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
 }
 
 ::-webkit-scrollbar {

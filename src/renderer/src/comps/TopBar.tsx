@@ -1,5 +1,6 @@
 import { Copy, Square, X, Minus } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import coDoctor from '@renderer/assets/images/co-doctor.png'
 
 export default function TopBar(): React.JSX.Element {
   const [max, setMax] = useState(false)
@@ -27,14 +28,20 @@ export default function TopBar(): React.JSX.Element {
   }
 
   return (
-    <div className="top-bar relative top-0 h-[5%]">
-      <button onClick={handleMinimize}>
-        <Minus size={20} />
-      </button>
-      <button onClick={handleMaximize}>{max ? <Copy size={18} /> : <Square size={18} />}</button>
-      <button onClick={handleClose}>
-        <X size={22} />
-      </button>
+    <div className="top-bar relative flex justify-between items-center top-0 h-[5%]">
+      <div className="flex items-center gap-2">
+        <img src={coDoctor} alt="Co Doctor Logo" className="h-6 w-6 object-contain" />
+        <span className="font-semibold text-green-700 text-lg">Co Doctor</span>
+      </div>
+      <div>
+        <button onClick={handleMinimize}>
+          <Minus size={20} />
+        </button>
+        <button onClick={handleMaximize}>{max ? <Copy size={18} /> : <Square size={18} />}</button>
+        <button onClick={handleClose}>
+          <X size={22} />
+        </button>
+      </div>
     </div>
   )
 }

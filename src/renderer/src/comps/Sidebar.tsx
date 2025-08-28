@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { SidebarIcon } from 'lucide-react'
+=======
+import { Search, SidebarIcon } from 'lucide-react'
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
 import { useState } from 'react'
 import Dashboard from './Dashboard'
 
-const sidebarIconStyle = 'p-6 cursor-pointer opacity-80 hover:opacity-100 transition-all'
+const sidebarIconStyle = 'p-6 pt-4! cursor-pointer opacity-80 hover:opacity-100 transition-all'
 
 export default function Sidebar(): React.JSX.Element {
   const [sidebar, setSidebar] = useState(false)
@@ -20,6 +24,12 @@ export default function Sidebar(): React.JSX.Element {
         <div className={sidebarIconStyle} onClick={() => setSidebar((sidebar) => !sidebar)}>
           <SidebarIcon size={30} />
         </div>
+<<<<<<< HEAD
+=======
+        <div className={sidebarIconStyle}>
+          <Search size={30} />
+        </div>
+>>>>>>> 3cd4a1e6fd02b004c2f6114f46cac0a5070e17b3
       </div>
     </div>
   )
